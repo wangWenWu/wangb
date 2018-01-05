@@ -70,11 +70,12 @@ body {
 	padding: 2%;
 	background-color: rgba(238, 238, 238, 0.25);
 	border-radius: 8px;
-	border-bottom: solid 3px #009ABB;
+	/*border-bottom: solid 3px #009ABB;*/
 	float:left;
 	opacity:0;
 	position:relative;
 	margin-left:-40%;
+	box-shadow: 3px 3px 5px #009ABB;
 }
 
 .cntl-state:nth-child(2n+2) .cntl-content {
