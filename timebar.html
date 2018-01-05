@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>我与舒舒 时间轴</title>
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">	
+	<link rel="stylesheet" type="text/css" href="./css/cntl.css">
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.tb960x90 {display:none!important;display:none}
+		p{font-family: "微软雅黑";}
+	</style>
+	</head>
+	<body>
+	<div class="header">
+		<div class="wrap">
+		<div class="logo">
+			<a href="index.html"><img src="images/logo2.png" title="pinbal" /></a>
+		</div>
+		 <div class="box" id="box" style="display: none;">
+			 <div class="box_content">        					                         
+				<div class="box_content_center">
+				 	<div class="form_content">
+						<div class="menu_box_list">
+							<ul>
+								<!-- 此处动态生成导航菜单 -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 小尺寸屏幕导航 -->
+		<div class="dropdown" style="float: right;right:10%;display: none;">
+		  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default">
+		  	<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dLabel">
+			<!-- 此处动态生成导航菜单 -->
+		  </ul>
+		</div>				
+		</div>
+	</div>	
+	<div class="jq22-container" style="margin-top: 100px;">	
+		<div class="cntl">
+			<span class="cntl-bar cntl-center">
+				<span class="cntl-bar-fill" style="height: 250px;"></span>
+			</span>
+
+			<div class="cntl-states">
+				<div class="cntl-state cntl-animate">
+					<div class="cntl-content">
+						<h4>我与舒舒Web 今日发布</h4>
+						<p>我与舒舒Web发布于GitHub Page，目的是记录、展示、分享我们生活中的点点滴滴...<br/>
+						我们享受当下的生活，并对我们的未来充满希望！爱父母，爱彼此，爱生活！配图《罗密欧与朱丽叶》</p>
+					</div>
+					<div class="cntl-image"><img src="./images/timebar/tb1.jpg"></div>
+					<div class="cntl-icon cntl-center">3th Jan.,2018</div>
+				</div>
+
+				<div class="cntl-state cntl-animate">
+					<div class="cntl-content">
+						<h4>云南游-昆明</h4>
+						<p>滇池
+						</p>
+					</div>
+					<div class="cntl-image"><img src="./images/timebar/a1.png"></div>
+					<div class="cntl-icon cntl-center">17th Nov.,2017</div>
+				</div>				
+
+				<div class="cntl-state cntl-animate">
+					<div class="cntl-content">
+						<h4>云南游-丽江</h4>
+						<p>
+						</p>
+					</div>
+					<div class="cntl-image"><img src="./images/timebar/a1.png"></div>
+					<div class="cntl-icon cntl-center">14th Nov.,2017</div>
+				</div>
+
+				<div class="cntl-state">
+					<div class="cntl-content">
+						<h4>云南游-大理</h4>
+						<p>Nulla ut tellus eu ante dapibus euismod ut sit amet est. Sed posuere scelerisque turpis, in bibendum magna feugiat non. Pellentesque ac tincidunt nibh. Nunc congue eu augue eu placerat. Nullam congue ex diam, id tincidunt augue pellentesque ac. Phasellus ornare nulla tellus, suscipit finibus urna tincidunt non. Nunc fringilla consequat massa.
+						</p>
+					</div>
+					<div class="cntl-image"><img src="./images/timebar/a2.png"></div>
+					<div class="cntl-icon cntl-center">12th Nov.,2017</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/createMenu.js"></script>
+	<script type="text/javascript" src="./js/initMenuShow.js"></script>
+	<script type="text/javascript" src="./js/jquery.cntl.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(e){
+			$('.cntl').cntl({
+				revealbefore: 300,
+				anim_class: 'cntl-animate',
+				onreveal: function(e){
+					console.log(e);
+				}
+			});
+		});
+	</script>
+
+</body></html>
