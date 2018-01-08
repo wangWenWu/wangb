@@ -1,0 +1,15 @@
+/**
+ * ------------------------
+ * css3动画样式
+ * ------------------------
+ * WangBin.2018.01.08
+*/
+@keyframes musicCtrlRotate
+{
+	0%{}
+	100%
+	{
+		-webkit-transform: rotateZ(360deg);
+	}
+	
+}
