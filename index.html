@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+  		<link rel="stylesheet" href="css/main.css">
   		<style type="text/css">
 			body{font-family: "微软雅黑";}
 			#content{position:relative;height:600px;margin-top: 90px;}
@@ -44,8 +45,24 @@
 			</div>
 		</div>
 		<div id="content">
+			<canvas id="iCanvas"></canvas>
 		</div>
 	</body>
 	<script type="text/javascript" src="js/createMenu.js"></script>
 	<script type="text/javascript" src="js/initMenuShow.js"></script>
+	<script type="text/javascript">
+		var ic = document.getElementById("iCanvas");
+		var context = ic.getContext("2d");
+		context.fillStyle="#FF0000";
+		context.moveTo(15,45);
+		context.lineTo(45,45);
+		context.lineTo(45,75);
+		context.fill();
+
+		//笑脸
+		context.beginPath();
+		context.fillStyle="#000";
+		context.arc(175,75,80,0,Math.PI*2,true);
+		context.stroke();
+	</script>
 </html>
