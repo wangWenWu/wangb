@@ -86,6 +86,7 @@
 
 			$("#musicCtrl").on("click touchstart",function(e){
 				e.stopPropagation();
+				e.preventDefault();
 			    if ($("#bgAudio").get(0).paused){
 			        $("#bgAudio").get(0).play();
 			        $(this).css("-webkit-animation","musicCtrlRotate 1.5s infinite");
