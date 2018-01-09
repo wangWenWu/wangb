@@ -11,7 +11,7 @@
   		<link rel="stylesheet" href="css/main.css">
   		<style type="text/css">
 			body{font-family: "微软雅黑";}
-			#content{position:relative;height:600px;margin-top: 90px;}
+			#content{position:relative;width: 1200px;height:800px;margin-top: 90px;overflow-x: hidden;overflow-y: hidden;margin: 90px auto;}
 		</style>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -45,19 +45,24 @@
 			</div>
 			</div>
 		</div>
-		<div id="content">
-			<canvas id="iCanvas"></canvas>
-		</div>
+		<div id="content"><!-- 烟花 --></div>
+		<!-- <canvas id="woyushushu" style="z-index: 999;position: absolute;top: 400px;" width="300px" height="300px"></canvas> -->
 	</body>
 	<script type="text/javascript" src="js/createMenu.js"></script>
 	<script type="text/javascript" src="js/initMenuShow.js"></script>
 	<script type="text/javascript" src="js/jquery.fireworks.js"></script>
 	<script type="text/javascript">
-		$('#content').fireworks({ 
-		  sound: true, // sound effect
-		  opacity: 0.9, 
-		  width: '100%', 
-		  height: '100%' 
-		});	
+		$('#content').fireworks({
+		  sound: false,//sound effect
+		  opacity: 0.9,
+		  width: '100%',
+		  height: '100%'
+		});
+
+		var cs = document.getElementById("woyushushu");
+		var ctx = cs.getContext("2d");
+		ctx.beginPath();
+		//ctx.fillStyle("#0C1021");
+		ctx.strokeRect(25,25,100,100);
 	</script>
 </html>
