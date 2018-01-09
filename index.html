@@ -50,19 +50,13 @@
 	</body>
 	<script type="text/javascript" src="js/createMenu.js"></script>
 	<script type="text/javascript" src="js/initMenuShow.js"></script>
+	<script type="text/javascript" src="js/jquery.fireworks.js"></script>
 	<script type="text/javascript">
-		/*var ic = document.getElementById("iCanvas");
-		var context = ic.getContext("2d");
-		context.fillStyle="#FF0000";
-		context.moveTo(15,45);
-		context.lineTo(45,45);
-		context.lineTo(45,75);
-		context.fill();
-
-		//笑脸
-		context.beginPath();
-		context.fillStyle="#000";
-		context.arc(175,75,80,0,Math.PI*2,true);
-		context.stroke();*/
+		$('#content').fireworks({ 
+		  sound: false, // sound effect
+		  opacity: 0.9, 
+		  width: '100%', 
+		  height: '100%' 
+		});	
 	</script>
 </html>
