@@ -5,7 +5,7 @@
 
     options.sound = options.sound || false;
 		options.opacity = options.opacity || 1;
-		options.width = '1900';//options.width || $(this).width();
+		options.width = options.width || $(this).width();
 		options.height = options.height || $(this).height();
 
     var fireworksField = this,
