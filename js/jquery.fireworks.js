@@ -6,7 +6,7 @@
     options.sound = options.sound || false;
 		options.opacity = options.opacity || 1;
 		options.width = options.width || $(this).width();
-		options.height = options.height || $(this).height();
+		options.height = 800;//options.height || $(this).height();
 
     var fireworksField = this,
         particles = [],
