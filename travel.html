@@ -76,11 +76,11 @@
 			var yinchuanPosition=new BMap.Point(106.239644,38.496527);//银川
 
 			var citysInfo = [
-			{p:chizhouPosition,n:'池州'},
-			{p:kunmingPosition,n:'昆明'},
-			{p:daliPosition,n:'大理'},
-			{p:yinchuanPosition,n:'银川'},
-			{p:lijiangPosition,n:'丽江'}];//城市坐标集合
+			{p:chizhouPosition,n:'池州',t:1},
+			{p:kunmingPosition,n:'昆明',t:0},
+			{p:daliPosition,n:'大理',t:0},
+			{p:yinchuanPosition,n:'银川',t:1},
+			{p:lijiangPosition,n:'丽江',t:0}];//城市坐标集合
 
 			addCurve(chizhouPosition,kunmingPosition);//池州-昆明
 			addCurve(kunmingPosition,daliPosition);//昆明-大理
@@ -109,58 +109,63 @@
 				//map.addOverlay(marker);//将标注添加到地图中
 			}
 
-		    function ComplexCustomOverlay(point,text){
-		      this._point = point;
-		      this._text = text;
+		    function ComplexCustomOverlay(point,text,vehicle){
+		      	this._point = point;
+		      	this._text = text;
+		      	this._vehicle = vehicle;
 		    }
 
 		    ComplexCustomOverlay.prototype = new BMap.Overlay();
 		    ComplexCustomOverlay.prototype.initialize = function(map){
-		      this._map = map;
-		      var div = this._div = document.createElement("div");
-		      div.style.position = "absolute";
-		      div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
-		      //div.style.backgroundColor = "#EE5D5B";
-		      //div.style.border = "1px solid #BC3B3A";
-		      div.style.color = "white";
-		      div.style.height = "80px";
-		      div.style.width = "80px";
-		      div.style.padding = "2px";
-		      div.style.lineHeight = "18px";
-		      div.style.whiteSpace = "nowrap";
-		      div.style.MozUserSelect = "none";
-		      div.style.fontSize = "12px"  
-		      var that = this;
+		      	this._map = map;
+				var div = this._div = document.createElement("div");
+				div.style.position = "absolute";
+				div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+				//div.style.backgroundColor = "#EE5D5B";
+				//div.style.border = "1px solid #BC3B3A";
+				div.style.color = "white";
+				div.style.height = "80px";
+				div.style.width = "80px";
+				div.style.padding = "2px";
+				div.style.lineHeight = "18px";
+				div.style.whiteSpace = "nowrap";
+				div.style.MozUserSelect = "none";
+				div.style.fontSize = "12px";
+				div.dataset.type = this._vehicle;
+				var that = this;
 
-		      var arrow = this._arrow = document.createElement("div");
-		      arrow.style.background = "url(./images/roadbar.png) no-repeat";
-		      arrow.style.position = "absolute";
-		      arrow.style.width = "80px";
-		      arrow.style.height = "80px";
-		      //arrow.style.top = "22px";
-		      arrow.style.left = "10px";
-		      arrow.style.overflow = "hidden";
-		      arrow.style.backgroundSize = "contain";
-		      //arrow.style.transform = "rotateZ(30deg)";
+				var arrow = this._arrow = document.createElement("div");
+				arrow.style.background = "url(./images/roadbar.png) no-repeat";
+				arrow.style.position = "absolute";
+				arrow.style.width = "80px";
+				arrow.style.height = "80px";
+				//arrow.style.top = "22px";
+				arrow.style.left = "10px";
+				arrow.style.overflow = "hidden";
+				arrow.style.backgroundSize = "contain";
+				//arrow.style.transform = "rotateZ(30deg)";
 
-		      var span = this._span = document.createElement("span");
-		      //span.style.backgroundColor = "red";
-		      span.style.width = "40px";
-		      span.style.height = "20px";
-		      span.style.position = "absolute";
-		      span.style.top = "30px";
-		      span.style.left = "30px";
-		      span.style.zIndex = "2";
-		      span.style.color = "#000";
-		      span.style.fontWeight = "bold";
-		      div.appendChild(span);
-		      span.appendChild(document.createTextNode(this._text)); 
+				var span = this._span = document.createElement("span");
+				//span.style.backgroundColor = "red";
+				span.style.width = "40px";
+				span.style.height = "20px";
+				span.style.position = "absolute";
+				span.style.top = "30px";
+				span.style.left = "30px";
+				span.style.zIndex = "2";
+				span.style.color = "#000";
+				span.style.fontWeight = "bold";
+				div.appendChild(span);
+				span.appendChild(document.createTextNode(this._text)); 
 
-		      div.appendChild(arrow);
+				div.appendChild(arrow);
 
-		      map.getPanes().labelPane.appendChild(div);
-		      
-		      return div;
+				map.getPanes().labelPane.appendChild(div);
+				
+				div.onclick = function(){
+					//alert(this.dataset.type);
+				}		      
+				return div;
 		    }
 
 		    ComplexCustomOverlay.prototype.draw = function(){
@@ -177,7 +182,7 @@
 		    	for (i in citysInfo)
 		    	{
 		    		var city = citysInfo[i];
-				    var myCompOverlay = new ComplexCustomOverlay(city.p,city.n);
+				    var myCompOverlay = new ComplexCustomOverlay(city.p,city.n,city.t);
 
 				    map.addOverlay(myCompOverlay);
 		    	}
