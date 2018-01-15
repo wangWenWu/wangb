@@ -8,11 +8,13 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
   		<link rel="stylesheet" href="css/main.css">
   		<style type="text/css">
-  			#map{height: 400px;width: 100%;overflow: hidden;top: 91px;}
+  			#map{height: 500px;width: 100%;overflow: hidden;top: 91px;}
+  			.BMap_Marker div{width: 50px !important;height: 40px !important;}
   		</style>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=PPpFRgsOWQMZwj31j8iM1dPz"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -57,7 +59,7 @@
 		<script type="text/javascript">
 			// 百度地图API功能
 			var map = new BMap.Map("map");//创建Map实例
-			map.centerAndZoom(new BMap.Point(116.404, 39.915), 6);//初始化地图,设置中心点坐标和地图级别
+			map.centerAndZoom(new BMap.Point(114.554072,30.554747), 7);//初始化地图,设置中心点坐标和地图级别
 			//添加地图类型控件
 			map.addControl(new BMap.MapTypeControl({
 				mapTypes:[
@@ -65,7 +67,121 @@
 		            BMAP_HYBRID_MAP
 		        ]}));	  
 			//map.setCurrentCity("中国");//设置地图显示的城市 此项是必须设置的
-			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+			map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+			
+			var chizhouPosition=new BMap.Point(117.509439,30.654765);//池州
+			var kunmingPosition=new BMap.Point(102.855897,24.872949);//昆明
+			var daliPosition=new BMap.Point(100.260729,25.61443);//大理
+			var lijiangPosition=new BMap.Point(100.227384,26.859856);//丽江
+			var yinchuanPosition=new BMap.Point(106.239644,38.496527);//银川
+
+			var citysInfo = [
+			{p:chizhouPosition,n:'池州'},
+			{p:kunmingPosition,n:'昆明'},
+			{p:daliPosition,n:'大理'},
+			{p:yinchuanPosition,n:'银川'},
+			{p:lijiangPosition,n:'丽江'}];//城市坐标集合
+
+			addCurve(chizhouPosition,kunmingPosition);//池州-昆明
+			addCurve(kunmingPosition,daliPosition);//昆明-大理
+			addCurve(daliPosition,lijiangPosition);//大理-丽江
+			addCurve(chizhouPosition,yinchuanPosition);//池州-银川
+
+			addOneOverlay(chizhouPosition);
+			addOneOverlay(kunmingPosition);
+			addOneOverlay(daliPosition);
+			addOneOverlay(lijiangPosition);
+			addOneOverlay(yinchuanPosition);
+
+			//添加弧线
+			function addCurve(depart,dest)
+			{
+				var points = [depart,dest];
+				//创建弧线对象
+				var curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:5, strokeOpacity:0.8});
+				map.addOverlay(curve);//添加到地图中
+			}
+
+			//添加点标注
+			function addOneOverlay(point)
+			{
+				var marker = new BMap.Marker(point);//创建标注
+				//map.addOverlay(marker);//将标注添加到地图中
+			}
+
+		    function ComplexCustomOverlay(point,text){
+		      this._point = point;
+		      this._text = text;
+		    }
+
+		    ComplexCustomOverlay.prototype = new BMap.Overlay();
+		    ComplexCustomOverlay.prototype.initialize = function(map){
+		      this._map = map;
+		      var div = this._div = document.createElement("div");
+		      div.style.position = "absolute";
+		      div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+		      //div.style.backgroundColor = "#EE5D5B";
+		      //div.style.border = "1px solid #BC3B3A";
+		      div.style.color = "white";
+		      div.style.height = "80px";
+		      div.style.width = "80px";
+		      div.style.padding = "2px";
+		      div.style.lineHeight = "18px";
+		      div.style.whiteSpace = "nowrap";
+		      div.style.MozUserSelect = "none";
+		      div.style.fontSize = "12px"  
+		      var that = this;
+
+		      var arrow = this._arrow = document.createElement("div");
+		      arrow.style.background = "url(./images/roadbar.png) no-repeat";
+		      arrow.style.position = "absolute";
+		      arrow.style.width = "80px";
+		      arrow.style.height = "80px";
+		      //arrow.style.top = "22px";
+		      arrow.style.left = "10px";
+		      arrow.style.overflow = "hidden";
+		      arrow.style.backgroundSize = "contain";
+		      //arrow.style.transform = "rotateZ(30deg)";
+
+		      var span = this._span = document.createElement("span");
+		      //span.style.backgroundColor = "red";
+		      span.style.width = "40px";
+		      span.style.height = "20px";
+		      span.style.position = "absolute";
+		      span.style.top = "30px";
+		      span.style.left = "30px";
+		      span.style.zIndex = "2";
+		      span.style.color = "#000";
+		      span.style.fontWeight = "bold";
+		      div.appendChild(span);
+		      span.appendChild(document.createTextNode(this._text)); 
+
+		      div.appendChild(arrow);
+
+		      map.getPanes().labelPane.appendChild(div);
+		      
+		      return div;
+		    }
+
+		    ComplexCustomOverlay.prototype.draw = function(){
+		      var map = this._map;
+		      var pixel = map.pointToOverlayPixel(this._point);
+		      this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+		      this._div.style.top  = pixel.y - 30 + "px";
+		    }
+
+		    initMyOverlay();//初始化自定义标注
+
+		    function initMyOverlay()
+		    {
+		    	for (i in citysInfo)
+		    	{
+		    		var city = citysInfo[i];
+				    var myCompOverlay = new ComplexCustomOverlay(city.p,city.n);
+
+				    map.addOverlay(myCompOverlay);
+		    	}
+		    }
 		</script>
 	</body>
 </html>
