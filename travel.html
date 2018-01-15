@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>我和舒舒《旅行》</title>
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+  		<link rel="stylesheet" href="css/main.css">
+  		<style type="text/css">
+  			#map{height: 400px;width: 100%;overflow: hidden;}
+  		</style>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=PPpFRgsOWQMZwj31j8iM1dPz"></script> -->
+		<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=PPpFRgsOWQMZwj31j8iM1dPz&services=&t=20180102152545"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="wrap">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo2.png" title="pinbal" /></a>
+			</div>
+			 <div class="box" id="box" style="display: none;">
+				 <div class="box_content">        					                         
+					<div class="box_content_center">
+					 	<div class="form_content">
+							<div class="menu_box_list">
+								<ul>
+									<!-- 此处动态生成导航菜单 -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 小尺寸屏幕导航 -->
+			<div class="dropdown" style="float: right;right:10%;display: none;">
+			  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default">
+			  	<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dLabel">
+				<!-- 此处动态生成导航菜单 -->
+			  </ul>
+			</div>				
+			</div>
+		</div>
+		<div class="content">
+			<div class="wrap">
+				<div id="map"></div>
+			</div>
+		</div>
+		<!--start-footer-->
+		<div class="footer">
+			<p>Copyright &copy; 2018.All rights reserved.</p>
+		</div>
+		<script type="text/javascript" src="js/createMenu.js"></script>
+		<script type="text/javascript" src="js/initMenuShow.js"></script>
+		<script type="text/javascript">
+			// 百度地图API功能
+			var map = new BMap.Map("map");//创建Map实例
+			map.centerAndZoom(new BMap.Point(117.509439,30.654765), 20);//初始化地图,设置中心点坐标和地图级别
+			//添加地图类型控件
+			map.addControl(new BMap.MapTypeControl({
+				mapTypes:[
+	            	BMAP_NORMAL_MAP,
+	            	BMAP_HYBRID_MAP
+	        ]}));
+			map.setCurrentCity("池州");//设置地图显示的城市此项是必须设置的
+			map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+			var point = new BMap.Point(117.509439,30.654765);
+	        var myIcon = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(60, 60), {  
+	                        offset: new BMap.Size(15, 15),//指定定位位置
+	                        imageOffset: new BMap.Size(40, 35)//设置图片偏移
+	                    });
+	        var marker=new BMap.Marker(point,{icon:myIcon});
+			map.addOverlay(marker);//将标注添加到地图中
+			marker.setAnimation(BMAP_ANIMATION_BOUNCE);//跳动的动画
+		</script>
+	</body>
+</html>
+
