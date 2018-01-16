@@ -4,6 +4,8 @@
  * ------------------------
  * WangBin.2018.01.08
 */
+
+/*时光轴页面背景音乐logo转动动画*/
 @keyframes musicCtrlRotate
 {
 	0%{}
@@ -11,5 +13,24 @@
 	{
 		-webkit-transform: rotateZ(360deg);
 	}
-	
+}
+
+/*旅行页面飞机或者火车动画*/
+@keyframes animaDivA
+{
+	0%,100%{
+		top: 50%;
+	}
+	0%{
+		right: 0;
+		display: block;
+	}
+	50%{
+		right: 50%;
+	}
+	100%
+	{
+		right: 100%;
+		display: none;
+	}
 }

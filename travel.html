@@ -7,9 +7,11 @@
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
 		<link rel="stylesheet" href="css/bootstrap.min.css">
   		<link rel="stylesheet" href="css/main.css">
+  		<link rel="stylesheet" href="css/animations.css">
   		<style type="text/css">
-  			#map{height: 500px;width: 100%;overflow: hidden;top: 91px;}
+  			#map{height: 600px;width: 100%;overflow: hidden;top: 91px;}
   			.BMap_Marker div{width: 50px !important;height: 40px !important;}
+  			#animaDiv{position: absolute;width: 400px;height: 200px;display: none;}
   		</style>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -50,16 +52,13 @@
 		<div class="content">
 			<div id="map"></div>
 		</div>
-		<!--start-footer-->
-		<div class="footer">
-			<p>Copyright &copy; 2018.All rights reserved.</p>
-		</div>
+		<div id="animaDiv"></div>
 		<script type="text/javascript" src="js/createMenu.js"></script>
 		<script type="text/javascript" src="js/initMenuShow.js"></script>
 		<script type="text/javascript">
 			// 百度地图API功能
 			var map = new BMap.Map("map");//创建Map实例
-			map.centerAndZoom(new BMap.Point(114.554072,30.554747), 7);//初始化地图,设置中心点坐标和地图级别
+			map.centerAndZoom(new BMap.Point(114.554072,30.554747), 6);//初始化地图,设置中心点坐标和地图级别
 			//添加地图类型控件
 			map.addControl(new BMap.MapTypeControl({
 				mapTypes:[
@@ -162,9 +161,37 @@
 
 				map.getPanes().labelPane.appendChild(div);
 				
-				div.onclick = function(){
-					//alert(this.dataset.type);
-				}		      
+				/*div.onclick = function(){
+					$("#animaDiv").css({"background-size":"contain","display":"block"});
+					if(this.dataset.type&&this.dataset.type==1){
+						$("#animaDiv").css({"background":"url('./images/airplane.png') no-repeat","-webkit-animation":"animaDivA 5s ease"});
+					}else{
+						$("#animaDiv").css({"background":"url('./images/train.png') no-repeat","-webkit-animation":"animaDivB 5s ease"});
+					}
+
+					$("#animaDiv").get(0).addEventListener("webkitAnimationEnd", function(){$("#animaDiv").css({"-webkit-animation":"none","display":"none"})},false);					
+				}*/
+
+				$(div).get(0).addEventListener("click",function(){
+					$("#animaDiv").css({"background-size":"contain","display":"block"});
+					if(this.dataset.type&&this.dataset.type==1){
+						$("#animaDiv").css({"background":"url('./images/airplane.png') no-repeat","-webkit-animation":"animaDivA 5s ease"});
+					}else{
+						$("#animaDiv").css({"background":"url('./images/train.png') no-repeat","-webkit-animation":"animaDivA 5s ease"});
+					}
+
+					$("#animaDiv").get(0).addEventListener("webkitAnimationEnd", function(){$("#animaDiv").css({"-webkit-animation":"none","display":"none"})},false);					
+				},false);
+				$(div).get(0).addEventListener("touchstart",function(){
+					$("#animaDiv").css({"background-size":"contain","display":"block"});
+					if(this.dataset.type&&this.dataset.type==1){
+						$("#animaDiv").css({"background":"url('./images/airplane.png') no-repeat","-webkit-animation":"animaDivA 5s ease"});
+					}else{
+						$("#animaDiv").css({"background":"url('./images/train.png') no-repeat","-webkit-animation":"animaDivA 5s ease"});
+					}
+
+					$("#animaDiv").get(0).addEventListener("webkitAnimationEnd", function(){$("#animaDiv").css({"-webkit-animation":"none","display":"none"})},false);					
+				},false);				
 				return div;
 		    }
 
