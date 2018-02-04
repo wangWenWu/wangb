@@ -18,6 +18,7 @@ var timeBarInfos = [
 {"title":"回石台咯","content":"老司机啊！带带我！","imgSrc":"./images/timebar/tb10.jpg","date":"30th Sep.,2017"},
 {"title":"小三首保了","content":"0W20 日产全合成机油，4儿子送的...","imgSrc":"./images/timebar/tb11.jpg","date":"19th Aug.,2017"},
 {"title":"最美背影","content":"平天湖畔不只有夫妻树还有这最美的背影","imgSrc":"./images/timebar/tb12.jpg","date":"22th July.,2017"},
+{"title":"平天湖畔夫妻树","content":"有你就有我，我俩长相依！","imgSrc":"./images/timebar/tb13.jpg","date":"22th July.,2017"},
 {"title":"提车咯！我们会善待你的，小骐达...","content":"2016款日产骐达智行版","imgSrc":"./images/timebar/tb15.jpg","date":"15th May,2017"},
 {"title":"采茶","content":"舒舒：劳动最光荣！<br>我：行，媳妇最光荣！我就给你拍张照，晒死了，我回去了！","imgSrc":"./images/timebar/tb16.jpg","date":"3th Apr.,2017"},
 {"title":"家乡的大学","content":"池州学院双人一日游，啊哟！鸡排不错哦！","imgSrc":"./images/timebar/tb17.jpg","date":"11th Mar.,2017"},
