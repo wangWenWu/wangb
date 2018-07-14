@@ -6,7 +6,7 @@
  * Modifed By WangBin On 2018.07.14 sunny
 */
 var c = 5;//一页显示5张照片
-var p = 0;//当前第一页
+var p = 1;//当前第一页
 var timeBarInfos = [
 {"title":"太冷了，是时候窝家七火锅了","content":"真好七啊，第一次七火锅不拉肚子。<img src='./images/emoji/laugh.gif'>","imgSrc":"./images/timebar/tb33.jpg","date":"6th Jan.,2018"},
 {"title":"我与舒舒Web 今日发布","content":"我与舒舒Web发布于GitHub Page，目的是记录、展示、分享我们生活中的点点滴滴...<br/>我们享受当下的生活，并对我们的未来充满希望！<img src='./images/emoji/hearta_thumb.gif'>爱父母，<img src='./images/emoji/hearta_thumb.gif'>爱彼此，<img src='./images/emoji/hearta_thumb.gif'>爱生活！配图《罗密欧与朱丽叶》","imgSrc":"./images/timebar/tb1.jpg","date":"3th Jan.,2018"},
@@ -55,9 +55,11 @@ var timeBarInfos = [
 var htmlStr = "";
 function GetTimeBarHtml()
 {
-	var i = p*c;
-	for(i;i<timeBarInfos.length;i++)
+	var i = (p-1)*c;
+	for(i;i<p*c;i++)
 	{
+		if(p*c>=timeBarInfos.length)return '';
+		
 		var info = timeBarInfos[i];
 		htmlStr += '<div class="cntl-state"><div class="cntl-content">';
 		htmlStr += '<h4>'+info.title+'</h4>';
