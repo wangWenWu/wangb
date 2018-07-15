@@ -65,8 +65,8 @@
 
             }
             
-            setupElements();
-            revealElements();
+            $(window).on('scroll',revealElements);
+            $(window).on('load',setupElements);
         }
 
         return this.each( function() {
@@ -125,7 +125,7 @@
             }
 
             $(window).on('scroll',revealElements);
-            $(window).on('load',setupElements)
+            $(window).on('load',setupElements);
 
         });
     }
