@@ -38,7 +38,7 @@
 
                 var windowtop = $(window).scrollTop();
                 var windowbtm = windowtop + $(window).height();
-                setupElements();
+                //setupElements();
                 for( var i = 0; i < states.length; i++) {
 
                     if( states[i].top > windowtop && states[i].top < windowbtm )
