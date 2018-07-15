@@ -12,8 +12,6 @@
 
         if(options.ff==true)
         {
-                    return this.each( function() {
-
             var statelist = $(this).find('.cntl-state');
             var bar_fill = $(this).find('.cntl-bar-fill');
             var states = [];
