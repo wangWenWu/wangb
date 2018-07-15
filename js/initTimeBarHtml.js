@@ -6,7 +6,7 @@
  * Modifed By WangBin On 2018.07.14 sunny
 */
 var c = 3;//一页显示5张照片
-var p = 1;//当前第一页
+var cp = 1;//当前第一页
 var timeBarInfos = [
 {"title":"太冷了，是时候窝家七火锅了","content":"真好七啊，第一次七火锅不拉肚子。<img src='./images/emoji/laugh.gif'>","imgSrc":"./images/timebar/tb33.jpg","date":"6th Jan.,2018"},
 {"title":"我与舒舒Web 今日发布","content":"我与舒舒Web发布于GitHub Page，目的是记录、展示、分享我们生活中的点点滴滴...<br/>我们享受当下的生活，并对我们的未来充满希望！<img src='./images/emoji/hearta_thumb.gif'>爱父母，<img src='./images/emoji/hearta_thumb.gif'>爱彼此，<img src='./images/emoji/hearta_thumb.gif'>爱生活！配图《罗密欧与朱丽叶》","imgSrc":"./images/timebar/tb1.jpg","date":"3th Jan.,2018"},
@@ -51,12 +51,13 @@ var timeBarInfos = [
 {"title":"化妆品收纳包","content":"多大个人了！连个化妆品包都没，来，小爷我赏你的...<img src='./images/emoji/pig.gif'>","imgSrc":"./images/timebar/tb31.jpg","date":"29th Jan.,2016"},
 {"title":"正义使者","content":"我代表卡布达来保护你！<img src='./images/emoji/wg_thumb.gif'>","imgSrc":"./images/timebar/tb32.jpg","date":"22th Nov.,2015"}
 ];
-
+var len = timeBarInfos.length;
+var p = Math.ceil(len/c);
 var htmlStr = "";
 function GetTimeBarHtml()
 {
-	var i = (p-1)*c;
-	for(i;i<p*c;i++)
+	var i = (cp-1)*c;
+	for(i;i<cp*c;i++)
 	{
 		if(p*c>=timeBarInfos.length)return '';
 		
@@ -75,5 +76,17 @@ function GetTimeBarHtml()
 
 $(".cntl-states").append(GetTimeBarHtml());
 					
-					
+function DoPageA()
+{
+	cp++;
+	if(cp>p){alert('Sorry, there are no more photos.');return true;}
+	$(".cntl-states").append(GetTimeBarHtml());
+}
+
+function DoPageS()
+{
+	cp--;
+	if(cp<1){alert('Sorry, there are no more photos.');return true;}
+	$(".cntl-states").append(GetTimeBarHtml());
+}
 					
