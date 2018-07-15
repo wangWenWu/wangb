@@ -53,9 +53,10 @@ var timeBarInfos = [
 ];
 var len = timeBarInfos.length;
 var p = Math.ceil(len/c);
-var htmlStr = "";
+
 function GetTimeBarHtml()
 {
+	var htmlStr = "";
 	var i = (cp-1)*c;
 	for(i;i<cp*c;i++)
 	{
