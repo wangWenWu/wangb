@@ -98,13 +98,18 @@
 	<script type="text/javascript" src="./js/jquery.cntl.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(e){
-			/*$('.cntl').cntl({
-				revealbefore: 300,
-				anim_class: 'cntl-animate',
-				onreveal: function(e){
-					//console.log(e);
-				}
-			});*/
+			initCntr();
+			
+			function initCntr()
+			{
+				$('.cntl').cntl({
+					revealbefore: 300,
+					anim_class: 'cntl-animate',
+					onreveal: function(e){
+						//console.log(e);
+					}
+				});
+			}
 
 			$("#musicCtrl").on("click touchstart",function(e){
 				e.stopPropagation();
