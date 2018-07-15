@@ -8,6 +8,13 @@
 var c = 3;//一页显示5张照片
 var cp = 1;//当前第一页
 var timeBarInfos = [
+{"title":"俄罗斯世界杯","content":"池州也疯狂！！！<img src='./images/emoji/clock_thumb.gif'>","imgSrc":"./images/timebar/tb48.jpg","date":"15th June.,2018"},
+{"title":"过完端午节","content":"在家吃了，还不忘装一车子过来！","imgSrc":"./images/timebar/tb49.jpg","date":"18th June.,2018"},	
+{"title":"回家过端午节","content":"-----","imgSrc":"./images/timebar/tb48.jpg","date":"15th June.,2018"},	
+{"title":"家常菜","content":"确实好七，有进步！<img src='./images/emoji/panda_thumb.gif'>","imgSrc":"./images/timebar/tb47.jpg","date":"11th May.,2018"},
+{"title":"电驴","content":"换了新电瓶，满血复活，没有肉车，只有肉人！","imgSrc":"./images/timebar/tb46.jpg","date":"2th May.,2018"},
+{"title":"碗都是我洗！！！","content":"确认过眼神，我还是辣个洗碗的人！<img src='./images/emoji/wq_thumb.gif'><img src='./images/emoji/sada_thumb.gif'>","imgSrc":"./images/timebar/tb45.jpg","date":"1th May.,2018"},
+{"title":"酒肉店","content":"大口吃肉，大口喝小米粥！","imgSrc":"./images/timebar/tb44.jpg","date":"9th Mar.,2018"},
 {"title":"大雪中的骐达！","content":"雪太厚，车开不出去了！<img src='./images/emoji/laugh.gif'>","imgSrc":"./images/timebar/tb43.jpg","date":"26th Jan.,2018"},
 {"title":"太冷了，是时候窝家七火锅了","content":"真好七啊，第一次七火锅不拉肚子。<img src='./images/emoji/laugh.gif'>","imgSrc":"./images/timebar/tb33.jpg","date":"6th Jan.,2018"},
 {"title":"我与舒舒Web 今日发布","content":"我与舒舒Web发布于GitHub Page，目的是记录、展示、分享我们生活中的点点滴滴...<br/>我们享受当下的生活，并对我们的未来充满希望！<img src='./images/emoji/hearta_thumb.gif'>爱父母，<img src='./images/emoji/hearta_thumb.gif'>爱彼此，<img src='./images/emoji/hearta_thumb.gif'>爱生活！配图《罗密欧与朱丽叶》","imgSrc":"./images/timebar/tb1.jpg","date":"3th Jan.,2018"},
