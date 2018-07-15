@@ -85,7 +85,7 @@ $("#PageA").on("click touch",function(e){
 $("#PageS").on("click touch",function(e){
 	e.stopPropagation();
 	e.preventDefault();
-	DoPageS();
+	//DoPageS();
 });
 					
 function DoPageA()
