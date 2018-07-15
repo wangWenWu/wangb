@@ -81,7 +81,7 @@ $("#PageA").on("click touch",function(e){
 	e.stopPropagation();
 	e.preventDefault();
 	DoPageA();
-	initCntr();
+	initCntr({ff:true});
 });
 
 $("#PageS").on("click touch",function(e){
@@ -104,13 +104,12 @@ function DoPageS()
 	$(".cntl-states").append(GetTimeBarHtml());
 }
 					
-function initCntr()
+function initCntr(op=null)
 {
-	$('.cntl').cntl({
+	if(op==null)op = {
 		revealbefore: 300,
 		anim_class: 'cntl-animate',
-		onreveal: function(e){
-			//console.log(e);
-		}
-	});
+		onreveal: function(e){}};
+	
+	$('.cntl').cntl(op);
 }
