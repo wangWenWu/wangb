@@ -5,7 +5,7 @@
  * WangBin.2018.01.08 sunny
  * Modifed By WangBin On 2018.07.14 sunny
 */
-var c = 4;//一页显示5张照片
+var c = 3;//一页显示5张照片
 var p = 1;//当前第一页
 var timeBarInfos = [
 {"title":"太冷了，是时候窝家七火锅了","content":"真好七啊，第一次七火锅不拉肚子。<img src='./images/emoji/laugh.gif'>","imgSrc":"./images/timebar/tb33.jpg","date":"6th Jan.,2018"},
