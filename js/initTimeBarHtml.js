@@ -75,6 +75,18 @@ function GetTimeBarHtml()
 }
 
 $(".cntl-states").append(GetTimeBarHtml());
+
+$("#PageA").on("click touch",function(e){
+	e.stopPropagation();
+	e.preventDefault();
+	DoPageA();
+});
+
+$("#PageS").on("click touch",function(e){
+	e.stopPropagation();
+	e.preventDefault();
+	DoPageS();
+});
 					
 function DoPageA()
 {
