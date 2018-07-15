@@ -81,7 +81,7 @@ $("#PageA").on("click touch",function(e){
 	e.stopPropagation();
 	e.preventDefault();
 	DoPageA();
-	initCntr({ff:true});
+	initCntr();
 });
 
 $("#PageS").on("click touch",function(e){
