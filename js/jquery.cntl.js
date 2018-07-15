@@ -18,7 +18,7 @@
             var tbf = 0;
 
 
-            function setupElements( )
+            function setupElements()
             {
 
                 for (var i = 0; i < statelist.length; i++) {
@@ -34,7 +34,7 @@
 
             }
 
-            function revealElements( )
+            function revealElements()
             {
 
                 var windowtop = $(window).scrollTop();
@@ -64,6 +64,9 @@
                 };
 
             }
+            
+            setupElements();
+            revealElements();
         }
 
         return this.each( function() {
