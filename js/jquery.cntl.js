@@ -15,6 +15,7 @@
             var bar_fill = $(this).find('.cntl-bar-fill');
             var states = [];
             var tbf = 0;
+            var f = false;
 
 
             function setupElements( )
@@ -64,7 +65,7 @@
 
             }
 
-            $(window).on('scroll',revealElements);
+            $(window).on('scroll',setupElements);
             $(window).on('load',setupElements);
 
         });
