@@ -59,7 +59,7 @@ function GetTimeBarHtml()
 	var i = (cp-1)*c;
 	for(i;i<cp*c;i++)
 	{
-		if(p*c>=timeBarInfos.length)return '';
+		if(cp*c>=timeBarInfos.length)return '';
 		
 		var info = timeBarInfos[i];
 		htmlStr += '<div class="cntl-state"><div class="cntl-content">';
