@@ -10,7 +10,13 @@
   		<link rel="stylesheet" href="css/main.css">
   		<style type="text/css">
 			body{font-family: "微软雅黑";}
-			#content{position:relative;width: 1200px;height:800px;margin-top: 90px;overflow-x: hidden;overflow-y: hidden;margin: 90px auto;}
+			#content{position:relative;width: 1200px;height:650px;margin-top: 90px;overflow-x: hidden;overflow-y: hidden;margin: 90px auto;background-color:#FFCB03;}
+			#hp{position:relative;width:250px;height:100px;background-color:red;margin:0 auto;background-image:url("./images/hp.png");background-repeat:no-repeat;background-size:contain;background-position:50% 50%;}
+			#sl{position:relative;left:100px;width:100px;height:500px;background-color:red;float:left;background-image:url("./images/sl.png");background-repeat:no-repeat;background-size:contain;background-position:50% 50%;}
+			#xl{position:relative;right:100px;width:100px;height:500px;background-color:red;float:right;background-image:url("./images/xl.png");background-repeat:no-repeat;background-size:contain;background-position:50% 50%;}
+			#bpl{position:relative;width:200px;height:200px;background-image:url("./images/bp.gif");background-repeat:no-repeat;background-size:cover;left:200px;}
+			#bpr{position:absolute;width:200px;height:200px;background-image:url("./images/bp.gif");background-repeat:no-repeat;background-size:cover;right:280px;float:right;top:100px;}
+			#bn{position:relative;width:400px;height:330px;background-image:url("./images/timg.png");background-repeat:no-repeat;background-size:cover;margin:0 auto;}
 		</style>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -45,15 +51,21 @@
 			</div>
 		</div>
 		<!-- 烟花 -->
-		<!--<div id="content"></div>-->
-		<div id="newyear2019"></div>
+		<div id="content">
+			<div id="hp"></div>
+			<div id="sl"></div>
+			<div id="xl"></div>
+			<div id="bpl"></div>
+			<div id="bpr"></div>
+			<div id="bn"></div>
+		</div>
 		<!-- <canvas id="woyushushu" style="z-index: 999;position: absolute;top: 400px;" width="300px" height="300px"></canvas> -->
 	</body>
 	<script type="text/javascript" src="js/createMenu.js"></script>
 	<script type="text/javascript" src="js/initMenuShow.js"></script>
 	<script type="text/javascript" src="js/jquery.fireworks.js"></script>
 	<script type="text/javascript">
-		$('#content').fireworks({
+		/*$('#content').fireworks({
 		  sound: false,//sound effect
 		  opacity: 0.9,
 		  width: '100%',
@@ -64,6 +76,6 @@
 		var ctx = cs.getContext("2d");
 		ctx.beginPath();
 		//ctx.fillStyle("#0C1021");
-		ctx.strokeRect(25,25,100,100);
+		ctx.strokeRect(25,25,100,100);*/
 	</script>
 </html>
