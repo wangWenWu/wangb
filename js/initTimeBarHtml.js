@@ -8,6 +8,7 @@
 var c = 3;//一页显示5张照片
 var cp = 1;//当前第一页
 var timeBarInfos = [
+{"title":"大雾","content":"敢问路在何方！","imgSrc":"./images/timebar/tb62.jpg","date":"17th Jan.,2019"},
 {"title":"过生日！","content":"18岁生日！","imgSrc":"./images/timebar/tb61.jpg","date":"28th Dec.,2018"},
 {"title":"蒸馒头","content":"第一次尝试","imgSrc":"./images/timebar/tb60.jpg","date":"2th Dec.,2018"},
 {"title":"芜湖一日游","content":"安工程","imgSrc":"./images/timebar/tb59.jpg","date":"24th Nov.,2018"},
