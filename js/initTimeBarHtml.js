@@ -8,6 +8,8 @@
 var c = 3;//一页显示5张照片
 var cp = 1;//当前第一页
 var timeBarInfos = [
+{"title":"过生日！","content":"18岁生日！","imgSrc":"./images/timebar/tb61.jpg","date":"28th Dec.,2018"},
+{"title":"蒸馒头","content":"第一次尝试","imgSrc":"./images/timebar/tb60.jpg","date":"2th Dec.,2018"},
 {"title":"芜湖一日游","content":"安工程","imgSrc":"./images/timebar/tb59.jpg","date":"24th Nov.,2018"},
 {"title":"游完湖堤，下午大闸蟹","content":"味道灰常宣美！","imgSrc":"./images/timebar/tb58.jpg","date":"4th Nov.,2018"},
 {"title":"平天湖湖堤","content":"秋景！","imgSrc":"./images/timebar/tb57.jpg","date":"4th Nov.,2018"},
