@@ -8,6 +8,7 @@
 var c = 3;//一页显示5张照片
 var cp = 1;//当前第一页
 var timeBarInfos = [
+{"title":"麻辣小河螺丝","content":"不知道好不好七！","imgSrc":"./images/timebar/tb52.jpg","date":"21th Jul.,2018"},
 {"title":"哈罗单车女神","content":"风大，舒服！","imgSrc":"./images/timebar/tb51.jpg","date":"8th Jul.,2018"},
 {"title":"俄罗斯世界杯","content":"池州也疯狂！！！<img src='./images/emoji/clock_thumb.gif'>","imgSrc":"./images/timebar/tb50.jpg","date":"15th June.,2018"},
 {"title":"过完端午节","content":"在家吃了，还不忘装一车子过来！","imgSrc":"./images/timebar/tb49.jpg","date":"18th June.,2018"},	
