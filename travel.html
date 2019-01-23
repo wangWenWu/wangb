@@ -82,16 +82,17 @@
 			{p:yinchuanPosition,n:'银川',t:1},
 			{p:lijiangPosition,n:'丽江',t:0}];//城市坐标集合
 
-			addCurve(chizhouPosition,kunmingPosition);//池州-昆明
-			addCurve(kunmingPosition,daliPosition);//昆明-大理
-			addCurve(daliPosition,lijiangPosition);//大理-丽江
-			addCurve(chizhouPosition,yinchuanPosition);//池州-银川
+			//addCurve(chizhouPosition,kunmingPosition);//池州-昆明
+			//addCurve(kunmingPosition,daliPosition);//昆明-大理
+			//addCurve(daliPosition,lijiangPosition);//大理-丽江
+			//addCurve(chizhouPosition,yinchuanPosition);//池州-银川
 
 			addOneOverlay(chizhouPosition);
 			addOneOverlay(kunmingPosition);
 			addOneOverlay(daliPosition);
 			addOneOverlay(lijiangPosition);
 			addOneOverlay(yinchuanPosition);
+			addOneOverlay(wuhuPosition);
 
 			//添加弧线
 			function addCurve(depart,dest)
