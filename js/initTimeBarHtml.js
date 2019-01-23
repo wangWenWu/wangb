@@ -8,6 +8,10 @@
 var c = 3;//一页显示5张照片
 var cp = 1;//当前第一页
 var timeBarInfos = [
+{"title":"芜湖一日游","content":"安工程","imgSrc":"./images/timebar/tb59.jpg","date":"24th Nov.,2018"},
+{"title":"游完湖堤，下午大闸蟹","content":"味道灰常宣美！","imgSrc":"./images/timebar/tb58.jpg","date":"4th Nov.,2018"},
+{"title":"平天湖湖堤","content":"秋景！","imgSrc":"./images/timebar/tb57.jpg","date":"4th Nov.,2018"},
+{"title":"自制南瓜饼","content":"其实问道还阔以！","imgSrc":"./images/timebar/tb56.jpg","date":"27th Oct.,2018"},
 {"title":"一帆风顺！","content":"<img src='./images/emoji/ye_thumb.gif'>","imgSrc":"./images/timebar/tb55.jpg","date":"24th Sept.,2018"},
 {"title":"入手九阳豆浆机！","content":"豆浆呢，媳妇！","imgSrc":"./images/timebar/tb54.jpg","date":"1th Sept.,2018"},
 {"title":"日常小礼物！","content":"本命英雄庄周！","imgSrc":"./images/timebar/tb53.jpg","date":"16th Aug.,2018"},
