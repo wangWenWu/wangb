@@ -101,6 +101,16 @@
 			        $(this).css("-webkit-animation","none");
 				}
 			});
+			var opacFlag = true;
+			var t = setInterval(function(){
+				if(opacFlag){
+					$("#PageA").css("opacity","0.3");
+					opacFlag = false;
+				}else{
+					$("#PageA").css("opacity","0.3");
+					opacFlag  = true;
+				}
+            		}, 1000);
 		});
 	</script>
 </body>
