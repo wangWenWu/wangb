@@ -75,6 +75,7 @@
 			var yinchuanPosition=new BMap.Point(106.239644,38.496527);//银川
 			var wuhuPosition=new BMap.Point(118.430236,31.358784);//芜湖
 			var hefeiPosition=new BMap.Point(117.235022,31.82479);//合肥
+			var anqingPosition=new BMap.Point(116.580768,30.635141);//安庆
 			
 			//城市坐标集合
 			var citysInfo = [
@@ -84,7 +85,8 @@
 			{p:yinchuanPosition,n:'银川',t:1},
 			{p:lijiangPosition,n:'丽江',t:0},
 			{p:wuhuPosition,n:'芜湖',t:0},
-			{p:hefeiPosition,n:'合肥',t:0}];
+			{p:hefeiPosition,n:'合肥',t:0},
+			{p:anqingPosition,n:'安庆',t:0}];
 
 			/*addCurve(chizhouPosition,kunmingPosition);//池州-昆明
 			addCurve(kunmingPosition,daliPosition);//昆明-大理
@@ -100,7 +102,8 @@
 			{s:daliPosition,e:lijiangPosition},
 			{s:chizhouPosition,e:yinchuanPosition},
 			{s:chizhouPosition,e:wuhuPosition},
-			{s:chizhouPosition,e:hefeiPosition}];
+			{s:chizhouPosition,e:hefeiPosition},
+			{s:chizhouPosition,e:anqingPosition}];
 			
 			//添加覆盖物
 			for(var i=0;i<citysInfo.length;i++){
