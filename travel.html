@@ -74,28 +74,46 @@
 			var lijiangPosition=new BMap.Point(100.227384,26.859856);//丽江
 			var yinchuanPosition=new BMap.Point(106.239644,38.496527);//银川
 			var wuhuPosition=new BMap.Point(118.430236,31.358784);//芜湖
-
+			var hefeiPosition=new BMap.Point(117.235022,31.82479);//合肥
+			
+			//城市坐标集合
 			var citysInfo = [
 			{p:chizhouPosition,n:'池州',t:1},
 			{p:kunmingPosition,n:'昆明',t:0},
 			{p:daliPosition,n:'大理',t:0},
 			{p:yinchuanPosition,n:'银川',t:1},
 			{p:lijiangPosition,n:'丽江',t:0},
-			{p:wuhuPosition,n:'芜湖',t:0}];//城市坐标集合
+			{p:wuhuPosition,n:'芜湖',t:0},
+			{p:hefeiPosition,n:'合肥',t:0}];
 
-			addCurve(chizhouPosition,kunmingPosition);//池州-昆明
+			/*addCurve(chizhouPosition,kunmingPosition);//池州-昆明
 			addCurve(kunmingPosition,daliPosition);//昆明-大理
 			addCurve(daliPosition,lijiangPosition);//大理-丽江
 			addCurve(chizhouPosition,yinchuanPosition);//池州-银川
 			addCurve(chizhouPosition,wuhuPosition);//池州-芜湖
-
-			addOneOverlay(chizhouPosition);
-			addOneOverlay(kunmingPosition);
-			addOneOverlay(daliPosition);
-			addOneOverlay(lijiangPosition);
-			addOneOverlay(yinchuanPosition);
-			addOneOverlay(wuhuPosition);
-
+			addCurve(chizhouPosition,hefeiPosition);//池州-合肥*/
+			
+			//城市路线集合
+			var linesInfo = [
+			{s:chizhouPosition,e:kunmingPosition},
+			{s:kunmingPosition,e:daliPosition},
+			{s:daliPosition,e:lijiangPosition},
+			{s:chizhouPosition,e:yinchuanPosition},
+			{s:chizhouPosition,e:wuhuPosition},
+			{s:chizhouPosition,e:hefeiPosition}];
+			
+			//添加覆盖物
+			for(var i=0;i<citysInfo.length;i++){
+				var psi = citysInfo[i]['p'];
+				addOneOverlay(chizhouPosition);
+			}
+			
+			//添加路线
+			for(var i=0;i<linesInfo.length;i++){
+				var s = linesInfo[i]['s'];
+				var e = linesInfo[i]['e'];
+				addCurve(s,e);
+			}
 			//添加弧线
 			function addCurve(depart,dest)
 			{
