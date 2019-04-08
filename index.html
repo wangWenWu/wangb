@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>我与舒舒 W&S's Family</title>
+		<link href="css/indexstyle.css" rel='stylesheet' type='text/css' />
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+  		<link rel="stylesheet" href="css/main.css">
+  		<style type="text/css">
+			body{font-family: "微软雅黑";}
+			#content{position:relative;width: 1200px;height:650px;margin-top: 90px;overflow-x: hidden;overflow-y: hidden;margin: 90px auto;background-color:#FFCB03;}
+			#hp{position:relative;width:250px;height:100px;background-color:red;margin:0 auto;background-image:url("./images/hp.png");background-repeat:no-repeat;background-size:contain;background-position:50% 50%;}
+			#sl{position:relative;left:100px;width:100px;height:500px;background-color:red;float:left;background-image:url("./images/sl.png");background-repeat:no-repeat;background-size:contain;background-position:50% 50%;}
+			#xl{position:relative;right:100px;width:100px;height:500px;background-color:red;float:right;background-image:url("./images/xl.png");background-repeat:no-repeat;background-size:contain;background-position:50% 50%;}
+			#bpl{position:relative;width:200px;height:200px;background-image:url("./images/bp.gif");background-repeat:no-repeat;background-size:cover;left:200px;}
+			#bpr{position:absolute;width:200px;height:200px;background-image:url("./images/bp.gif");background-repeat:no-repeat;background-size:cover;right:280px;float:right;top:100px;}
+			#bn{position:relative;width:400px;height:330px;background-image:url("./images/timg.png");background-repeat:no-repeat;background-size:cover;margin:0 auto;}
+		</style>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="wrap">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo2.png" title="pinbal" /></a>
+			</div>
+			 <div class="box" id="box" style="display: none;">
+				 <div class="box_content">        					                         
+					<div class="box_content_center">
+					 	<div class="form_content">
+							<div class="menu_box_list">
+								<ul>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 小尺寸屏幕导航 -->
+			<div class="dropdown" style="float: right;right:10%;display: none;">
+			  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default">
+			  	<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" aria-labelledby="dLabel">
+			  </ul>
+			</div>
+			</div>
+		</div>
+		<!-- 烟花 -->
+		<div id="content">
+			<div id="hp"></div>
+			<div id="sl"></div>
+			<div id="xl"></div>
+			<div id="bpl"></div>
+			<div id="bpr"></div>
+			<div id="bn"></div>
+		</div>
+		<!-- <canvas id="woyushushu" style="z-index: 999;position: absolute;top: 400px;" width="300px" height="300px"></canvas> -->
+	</body>
+	<script type="text/javascript" src="js/createMenu.js"></script>
+	<script type="text/javascript" src="js/initMenuShow.js"></script>
+	<script type="text/javascript" src="js/jquery.fireworks.js"></script>
+	<script type="text/javascript">
+		/*$('#content').fireworks({
+		  sound: false,//sound effect
+		  opacity: 0.9,
+		  width: '100%',
+		  height: '100%'
+		});
+
+		var cs = document.getElementById("woyushushu");
+		var ctx = cs.getContext("2d");
+		ctx.beginPath();
+		//ctx.fillStyle("#0C1021");
+		ctx.strokeRect(25,25,100,100);*/
+	</script>
+</html>
